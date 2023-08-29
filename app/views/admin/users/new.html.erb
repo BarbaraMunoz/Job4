@@ -1,0 +1,49 @@
+
+<h1>Crear Nuevo Usuario</h1>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @user, url: admin_users_path do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, autofocus: true %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+
+  <%= f.label :department %>
+  <%= f.text_field :department %>
+
+  <%= f.label :bio %>
+  <%= f.text_area :bio, rows: 4, value: 'Debe completar', class: 'default-bio' %>
+
+  <%= f.label :role %>
+  <%= f.select :role, User.roles.keys %>
+
+  <%= f.label :password %>
+  <div class="password-field">
+    <%= f.password_field :password, class: 'default-password' %>
+  </div>
+
+  <%= f.submit "Create User" %>
+<% end %>
+
+<%= link_to "Back to Dashboard", admin_dashboard_path %>
+
+
+
+
