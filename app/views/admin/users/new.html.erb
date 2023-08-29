@@ -1,48 +1,70 @@
+<div class="user-form">
+  <h2 class="py-2">Nuevo Usuario</h2>
 
-<h1>Crear Nuevo Usuario</h1>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <%= form_for @user, url: admin_users_path do |f| %>
+    <div class="form-group">
+      <%= f.label :Nombre, class: "form-label" %>
+      <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+    </div>
 
-<%= form_for @user, url: admin_users_path do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name, autofocus: true %>
+    <div class="form-group">
+      <%= f.label :Apellido, class: "form-label" %>
+      <%= f.text_field :last_name, class: "form-control" %>
+    </div>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+    <div class="form-group">
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <div class="form-group">
+      <%= f.label :Cargo, class: "form-label" %>
+      <%= f.text_field :position, class: "form-control" %>
+    </div>
 
-  <%= f.label :position %>
-  <%= f.text_field :position %>
+    <div class="form-group">
+      <%= f.label :Departamento, class: "form-label" %>
+      <%= f.text_field :department, class: "form-control" %>
+    </div>
 
-  <%= f.label :department %>
-  <%= f.text_field :department %>
+    <div class="form-group">
+      <%= f.label :Presentación, class: "form-label" %>
+      <%= f.text_area :bio, rows: 4, value: 'Debe completar el empleado', class: 'form-control default-bio' %>
+    </div>
 
-  <%= f.label :bio %>
-  <%= f.text_area :bio, rows: 4, value: 'Debe completar', class: 'default-bio' %>
+    <div class="form-group">
+      <%= f.label :avatar, "Foto de Perfil", class: "form-label" %>
+      <%= f.file_field :avatar, value: @user.default_avatar_url, class: "form-control" %>
+    </div>
 
-  <%= f.label :role %>
-  <%= f.select :role, User.roles.keys %>
+    <div class="form-group">
+      <%= f.label :role, class: "form-label" %>
+      <%= f.select :role, User.roles.keys, class: "form-control" %>
+    </div>
 
-  <%= f.label :password %>
-  <div class="password-field">
-    <%= f.password_field :password, class: 'default-password' %>
-  </div>
+    <div class="form-group">
+      <%= f.label :Contraseña_Predefinida, class: "form-label" %>
+      <div class="password-field">
+        <%= f.password_field :password, class: 'form-control default-password' %>
+      </div>
+    </div>
 
-  <%= f.submit "Create User" %>
-<% end %>
+    <%= f.submit "Crear Usuario", class: "btn btn-primary mb-2" %>
+  <% end %>
 
-<%= link_to "Back to Dashboard", admin_dashboard_path %>
+  <%= link_to "Volver al Panel", admin_dashboard_path, class: "btn btn-secondary" %>
+</div>
 
 
 

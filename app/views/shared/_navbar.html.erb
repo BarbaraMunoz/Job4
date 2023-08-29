@@ -8,22 +8,22 @@
             <% if user_signed_in? %>
                 <% if current_user.admin? %>
                     <li class="nav-item">
-                        <%= link_to "Admin Dashboard", admin_dashboard_path, class: "nav-link" %>
+                        <%= link_to "Panel", admin_dashboard_path, class: "nav-link" %>
                     </li>
                 <% else %>
                     <li class="nav-item">
-                        <%= link_to "User Dashboard", regular_users_dashboard_path, class: "nav-link" %>
+                        <%= link_to "Panel", regular_users_dashboard_path, class: "nav-link" %>
                     </li>
                 <% end %>
                 <li class="nav-item">
                     <span class="nav-link">Hola, <%= current_user.first_name %></span>
                 </li>
                 <li class="nav-item">
-                    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                    <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
             <% else %>
                 <li class="nav-item">
-                    <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+                    <%= link_to "Iniciar Sesión", new_user_session_path, class: "nav-link" %>
                 </li>
             <% end %>
         </ul>

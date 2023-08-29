@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     root 'dashboard#index', as: :dashboard
-    resources :dashboard, only: [:index] do
-      member do
-        delete 'destroy_user', to: 'dashboard#destroy_user', as: :destroy_user
-      end
-    end
-
-    resources :users, only: [:new, :create, :destroy] 
+    resources :dashboard, only: [:index]
+    resources :users, only: [:new, :create, :show, :destroy] 
   end
 
   namespace :regular_users do
@@ -21,4 +17,5 @@ Rails.application.routes.draw do
 
   root 'regular_users/dashboard#index' # Cambiado para redirigir a la página de inicio de los usuarios regulares
 end
+
 

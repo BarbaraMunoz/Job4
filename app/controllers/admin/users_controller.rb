@@ -18,6 +18,16 @@ class Admin::UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.find(params[:id])
+    end
+
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to admin_dashboard_path, notice: 'Usuario eliminado con éxito.'
+    end
+
     private
 
     def user_params
