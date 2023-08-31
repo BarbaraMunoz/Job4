@@ -1,0 +1,22 @@
+<h1><%= @job_offer.title %></h1>
+<p><%= @job_offer.description %></p>
+<p><%= @job_offer.requirements %></p>
+
+<% if @job_offer.applied_by?(current_user) %>
+    <p>Ya has aplicado a esta oferta el día <%= @job_offer.applied_date(current_user) %></p>
+<% else %>
+    <h2>Realizar Postulación</h2>
+    <%= form_with(model: @apply, url: regular_users_job_offer_applies_path(@job_offer), method: :post) do |f| %>
+        <%= f.hidden_field :job_offer_id %>
+        <%= f.submit 'Postular', class: 'btn btn-primary' %>
+    <% end %>
+<% end %>
+
+<%= link_to 'Volver a la lista', regular_users_job_offers_path %>
+
+
+
+
+
+
+

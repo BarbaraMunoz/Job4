@@ -1,0 +1,2 @@
+module RegularUsers::AppliesHelper
+end

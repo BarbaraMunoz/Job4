@@ -1,0 +1,20 @@
+<%= form_with(model: job_offer, url: job_offer.persisted? ? admin_job_offer_path(job_offer) : admin_job_offers_path, method: job_offer.persisted? ? :patch : :post) do |f| %>
+    <div>
+        <%= f.label :Título %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label :Descripción %>
+        <%= f.text_area :description %>
+    </div>
+
+    <div>
+        <%= f.label :Requerimientos %>
+        <%= f.text_area :requirements %>
+    </div>
+
+    <div>
+        <%= f.submit 'Guardar' %>
+    </div>
+<% end %>

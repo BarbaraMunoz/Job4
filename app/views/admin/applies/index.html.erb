@@ -1,0 +1,18 @@
+<%= link_to 'Crear nueva Oferta', new_admin_job_offer_path %>
+
+
+<h1>Últimas Ofertas con Postulaciones</h1>
+
+<% @job_offers_with_applies.each do |job_offer| %>
+    <div class="job-offer">
+        <h2><%= job_offer.title %></h2>
+        <p>Postulaciones: <%= job_offer.applies.count %></p>
+        <% if job_offer.applies.any? %>
+        <%= link_to 'Ver Detalle', admin_job_offer_apply_path(job_offer, job_offer.applies.first), class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+<% end %>
+
+
+
+

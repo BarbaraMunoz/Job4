@@ -1,0 +1,28 @@
+<h1>Ofertas Laborales</h1>
+
+<table>
+    <thead>
+        <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Requerimientos</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @job_offers.each do |job_offer| %>
+        <tr>
+            <td><%= job_offer.title %></td>
+            <td><%= job_offer.description %></td>
+            <td><%= job_offer.requirements %></td>
+            <td>
+            <%= link_to 'Show', admin_job_offer_path(job_offer) %>
+            <%= link_to 'Edit', edit_admin_job_offer_path(job_offer) %>
+            <%= link_to 'Delete', admin_job_offer_path(job_offer), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Crear nueva Oferta', new_admin_job_offer_path %>

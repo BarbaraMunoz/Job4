@@ -25,9 +25,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super do |resource|
+      redirect_to regular_users_user_path(resource) and return if resource.valid?
+    end
+  end
 
   # DELETE /resource
   # def destroy

@@ -1,0 +1,17 @@
+<h1>Detalles de la Postulación</h1>
+<p>Oferta Laboral: <%= @job_offer.title %></p>
+<p>Descripción de la Oferta: <%= @job_offer.description %></p>
+
+<h2>Empleados que han postulado:</h2>
+<ul>
+    <% @applicants.each do |applicant| %>
+        <li>
+            <%= link_to applicant.full_name, admin_user_path(applicant) %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to 'Volver a la lista de Postulaciones', admin_last_applies_path %>
+
+
+

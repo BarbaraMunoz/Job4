@@ -18,3 +18,22 @@ admin = User.create!(
     password_confirmation: 'admin123',
     role: 'admin'
 )
+
+# Crea una oferta de trabajo simulada
+job_offer = JobOffer.create(
+    title: 'Desarrollador de Software',
+    description: 'Estamos buscando un desarrollador de software altamente motivado...',
+    requirements: 'Experiencia en Ruby on Rails, conocimientos en bases de datos...',
+    user_id: User.admin.first.id # Reemplaza esto con el ID del administrador correspondiente
+)
+
+user = User.regular.first # Asegúrate de que el método "regular" devuelva los usuarios regulares
+job_offer = JobOffer.first
+
+# Crea una postulación simulada
+apply = Apply.create(
+    user: user,
+    job_offer: job_offer,
+    message: 'Estoy interesado en esta posición y creo que soy un buen candidato.',
+    status: 'pending' # Cambia esto según corresponda
+)

@@ -1,0 +1,16 @@
+<h1>Ofertas Laborales a las que has aplicado</h1>
+
+<ul class="list-group">
+    <% @applied_job_offers.each do |applied_job_offer| %>
+        <li class="list-group-item">
+        <%= link_to applied_job_offer.title, regular_users_job_offer_path(applied_job_offer) %>
+        <!-- Puedes personalizar aquí cómo deseas mostrar las ofertas aplicadas -->
+        </li>
+    <% end %>
+</ul>
+
+
+
+
+
+

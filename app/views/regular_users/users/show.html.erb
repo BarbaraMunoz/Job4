@@ -1,0 +1,7 @@
+<div class="container">
+    <%= render partial: 'profile_card', locals: { user: @user } %>
+</div>
+
+<div class="text-center">
+    <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'btn btn-primary' %>
+</div>

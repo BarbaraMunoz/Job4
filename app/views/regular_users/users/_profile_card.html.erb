@@ -1,0 +1,25 @@
+<div class="card profile-card">
+    <div class="card-header profile-card-header">
+        Perfil
+    </div>
+    <div class="card-body profile-card-body">
+        <div class="profile-details">
+        <h5 class="profile-name"><%= user.first_name %> <%= user.last_name %></h5>
+        <p class="profile-info">Correo Electrónico: <%= user.email %></p>
+        <p class="profile-info">Cargo: <%= user.position %></p>
+        <p class="profile-info">Departamento: <%= user.department %></p>
+        </div>
+        <div>
+        <% if user.avatar.attached? %>
+            <%= image_tag user.avatar, class: 'profile-avatar' %>
+        <% else %>
+            <%= image_tag 'default_avatar.jpg', class: 'profile-avatar' %>
+        <% end %>
+        </div>
+    </div>
+    <div class="profile-bio">
+        <p class="card-text">Biografía: <%= user.bio %></p>
+    </div>
+</div>
+
+

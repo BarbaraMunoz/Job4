@@ -1,0 +1,2 @@
+module RegularUsers::UsersHelper
+end
