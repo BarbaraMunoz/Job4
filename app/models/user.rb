@@ -9,7 +9,7 @@ class User < ApplicationRecord
         has_one_attached :avatar
         has_many :applies, dependent: :destroy
         # Asociación para las ofertas laborales creadas por el admin
-        has_many :job_offers, class_name: 'JobOffer', foreign_key: 'admin_id'
+        has_many :job_offers, class_name: 'JobOffer'
 
         # Validaciones para los campos adicionales
         validates :first_name, :last_name, :position, :department, :bio, presence: true

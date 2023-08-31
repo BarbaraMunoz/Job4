@@ -1,20 +1,24 @@
-<%= form_with(model: job_offer, url: job_offer.persisted? ? admin_job_offer_path(job_offer) : admin_job_offers_path, method: job_offer.persisted? ? :patch : :post) do |f| %>
+<%= form_with(model: @job_offer, url: admin_job_offers_path) do |f| %>
     <div>
-        <%= f.label :Título %>
-        <%= f.text_field :title %>
+        <%= f.label :title, "Título" %>
+        <%= f.text_field :title, class: "form-control" %>
     </div>
 
     <div>
-        <%= f.label :Descripción %>
-        <%= f.text_area :description %>
+        <%= f.label :description, "Descripción" %>
+        <%= f.text_area :description, class: "form-control" %>
     </div>
 
     <div>
-        <%= f.label :Requerimientos %>
-        <%= f.text_area :requirements %>
+        <%= f.label :requirements, "Requerimientos" %>
+        <%= f.text_area :requirements, class: "form-control" %>
     </div>
 
     <div>
-        <%= f.submit 'Guardar' %>
+        <%= f.submit 'Crear', class: "btn btn-primary" %>
     </div>
 <% end %>
+
+
+
+

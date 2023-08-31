@@ -20,8 +20,10 @@
                 <%= link_to "Usuarios", admin_users_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                <i class="far fa-bell d-none d-md-block" style="font-size: 22px; color: #CBE4F2;"></i>
+                <a class="nav-link" href="<%= notifications_path %>">
+                <i class="far fa-bell d-none d-md-block" style="font-size: 22px; color: #CBE4F2;">
+                    <%= Notification.where(read: false).count %>
+                </i>
                 </a>
             </li>
             <% else %>

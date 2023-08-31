@@ -9,15 +9,19 @@ class Admin::JobOffersController < ApplicationController
     def new
         @job_offer = JobOffer.new
     end
-
+    
     def create
-        @job_offer = JobOffer.new(job_offer_params)
+        @job_offer = current_user.job_offers.new(job_offer_params)
+    
         if @job_offer.save
-            redirect_to admin_job_offer_path(@job_offer), notice: 'Job offer was successfully created.'
+            redirect_to admin_job_offers_path, notice: 'Job offer was successfully created.'
         else
             render :new
         end
     end
+    
+    
+    
 
     def show
     end
@@ -43,7 +47,7 @@ class Admin::JobOffersController < ApplicationController
     def set_job_offer
         @job_offer = JobOffer.find(params[:id])
     end
-
+    
     def job_offer_params
         params.require(:job_offer).permit(:title, :description, :requirements)
     end

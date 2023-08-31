@@ -1,6 +1,23 @@
 <h1>Editar Oferta Laboral</h1>
+<%= form_with(model: @job_offer, url: admin_job_offer_path(@job_offer), method: :patch) do |f| %>
+    <div>
+        <%= f.label :title, "Título" %>
+        <%= f.text_field :title, class: "form-control" %>
+    </div>
 
-<%= render 'form', job_offer: @job_offer %>
+    <div>
+        <%= f.label :description, "Descripción" %>
+        <%= f.text_area :description, class: "form-control" %>
+    </div>
 
-<%= link_to 'Ver detalle', admin_job_offer_path(@job_offer) %> |
+    <div>
+        <%= f.label :requirements, "Requerimientos" %>
+        <%= f.text_area :requirements, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= f.submit 'Actualizar', class: "btn btn-primary" %>
+    </div>
+<% end %>
+
 <%= link_to 'Volver', admin_job_offers_path %>

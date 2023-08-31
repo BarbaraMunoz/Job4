@@ -24,3 +24,9 @@ Things you may want to cover:
 * ...
 # Job4
 
+  
+  #### VER LO DE LAS NOTIFICACIONES CADA VEZ QUE USER POSTULE 
+  #### ARREGLAR LAS VISTAS
+ 
+
+  CREAR NUEVA OFERTA LABORAL NO DIRIGE #### Ver el de DEVISE
