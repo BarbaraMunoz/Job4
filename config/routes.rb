@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index', as: :dashboard
     resources :users, only: [:index, :new, :create, :show, :destroy]
+    resources :notifications, only: [:index, :show]
     resources :job_offers, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
       resources :applies, only: [:index, :show]
     end
     get 'last_applies', to: 'applies#index', as: :last_applies
   end
+  
 
   namespace :regular_users do
     resources :dashboard, only: [:index]

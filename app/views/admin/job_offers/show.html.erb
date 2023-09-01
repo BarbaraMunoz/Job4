@@ -7,4 +7,4 @@
 <p><%= @job_offer.requirements %></p>
 
 <%= link_to 'Editar', edit_admin_job_offer_path(@job_offer) %> |  <%= button_to 'Eliminar', admin_job_offer_path(@job_offer), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Volver', admin_job_offers_path %>
+<%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>

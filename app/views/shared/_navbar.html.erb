@@ -14,16 +14,15 @@
                 <%= link_to "Ofertas Laborales", admin_job_offers_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to "Últimas Postulaciones", admin_last_applies_path, class: "nav-link" %>
+                <%= link_to "Postulaciones", admin_last_applies_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
                 <%= link_to "Usuarios", admin_users_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<%= notifications_path %>">
-                <i class="far fa-bell d-none d-md-block" style="font-size: 22px; color: #CBE4F2;">
-                    <%= Notification.where(read: false).count %>
-                </i>
+                <a class="nav-link" href="<%= admin_notifications_path %>">
+                    <i id="notification-icon" class="far fa-bell d-none d-md-block" style="font-size: 22px; color: #CBE4F2;">
+                    </i>
                 </a>
             </li>
             <% else %>

@@ -1,5 +1,7 @@
 <h1>Ofertas Laborales</h1>
 
+<%= link_to 'Crear nueva Oferta', new_admin_job_offer_path, class: 'admin-btn' %>
+
 <table>
     <thead>
         <tr>
@@ -12,7 +14,7 @@
     <tbody>
         <% @job_offers.each do |job_offer| %>
         <tr>
-            <td><% job_offer.created_at %></td>
+            <td><%= job_offer.created_at.strftime('%d/%m/%Y') %></td>
             <td><%= job_offer.title %></td>
             <td><%= job_offer.requirements %></td>
             <td>
@@ -24,4 +26,4 @@
     </tbody>
 </table>
 
-<%= link_to 'Crear nueva Oferta', new_admin_job_offer_path %>
+

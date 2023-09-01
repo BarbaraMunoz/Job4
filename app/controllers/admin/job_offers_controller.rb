@@ -14,15 +14,12 @@ class Admin::JobOffersController < ApplicationController
         @job_offer = current_user.job_offers.new(job_offer_params)
     
         if @job_offer.save
-            redirect_to admin_job_offers_path, notice: 'Job offer was successfully created.'
+            redirect_to admin_job_offers_path, notice: 'Oferta creada con éxito'
         else
             render :new
         end
     end
     
-    
-    
-
     def show
     end
 

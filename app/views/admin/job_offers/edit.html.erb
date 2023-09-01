@@ -16,8 +16,11 @@
     </div>
 
     <div>
-        <%= f.submit 'Actualizar', class: "btn btn-primary" %>
+        <%= f.submit 'Actualizar', class: "btn btn-primary mt-2" %>
+    </div>
+    <div>
+        <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>
     </div>
 <% end %>
 
-<%= link_to 'Volver', admin_job_offers_path %>
+

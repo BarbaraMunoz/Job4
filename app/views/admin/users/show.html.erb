@@ -24,7 +24,7 @@
     <div class="user-actions">
         <%= button_to "Eliminar Usuario", admin_user_path(@user), method: :delete, data: { confirm: "¿Estás seguro de que deseas eliminar este usuario?" }, class: "admin-btn delete-btn" %>
     </div>
-    <%= link_to 'Volver', :back %>
+    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>
 </div>
 
 

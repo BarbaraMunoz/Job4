@@ -7,6 +7,7 @@
     <% @applicants.each do |applicant| %>
         <li>
             <%= link_to applicant.full_name, admin_user_path(applicant) %>
+            
         </li>
     <% end %>
 </ul>

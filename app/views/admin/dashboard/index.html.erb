@@ -4,28 +4,8 @@
 
     <%= link_to "Crear Nuevo Usuario", new_admin_user_path, class: "admin-btn" %>
 
-    <div class="users-list">
-        <% @users.each do |user| %>
-            <div class="admin-card">
-                <div class="user-avatar">
-                    <% if user.avatar.attached? %>
-                        <%= image_tag user.avatar, class: "user-avatar-img" %>
-                    <% else %>
-                        <%= image_tag 'default_avatar.jpg', class: "user-avatar-img" %>
-                    <% end %>
-                </div>
-                <div class="user-details">
-                    <p><strong>Fecha de Creación:</strong> <%= user.created_at.strftime('%d/%m/%Y %H:%M:%S') %></p>
-                    <p class="user-name"><strong>Nombre:</strong> <%= user.first_name %> <%= user.last_name %></p>
-                    <p><strong>Correo Electrónico:</strong> <%= user.email %></p>
-                </div>
-                <div class="user-actions">
-                    <%= link_to "Ver Detalle", admin_user_path(user), class: "admin-btn user-action-btn view-btn" %>
-                </div>
-            </div>
-        <% end %>
-    </div>
-</div>
+    <%= link_to 'Crear nueva Oferta', new_admin_job_offer_path, class: "admin-btn" %>
+
 
 
 

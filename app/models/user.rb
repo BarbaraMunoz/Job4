@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
         enum role: { regular: 0, admin: 1 }
 
-        has_one_attached :avatar
+        has_one_attached :avatar, dependent: :destroy
         has_many :applies, dependent: :destroy
         # Asociación para las ofertas laborales creadas por el admin
         has_many :job_offers, class_name: 'JobOffer'
@@ -21,5 +21,10 @@ class User < ApplicationRecord
 
         def full_name
           "#{first_name} #{last_name}"
+        end
+
+        def unread_applies_notifications_count
+          applies = self.applies.joins(:job_offer)
+          Notification.where(job_offer_id: applies.pluck(:job_offer_id), read: false).count
         end
 end
