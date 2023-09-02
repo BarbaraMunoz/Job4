@@ -3,6 +3,9 @@ class Admin::AppliesController < ApplicationController
   
   def index
     @job_offers_with_applies = JobOffer.joins(:applies).distinct
+
+    @pagy, @job_offers_with_applies = pagy(JobOffer.joins(:applies).distinct)
+    
   end
 
   def show

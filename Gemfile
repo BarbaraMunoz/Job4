@@ -80,3 +80,9 @@ gem "jquery-rails", "~> 4.6"
 gem "popper_js", "~> 2.11"
 
 gem "activestorage"
+
+gem "figaro", "~> 1.2"
+
+gem 'pagy'
+
+

@@ -3,6 +3,8 @@ class Admin::UsersController < ApplicationController
 
     def index
         @users = User.where(role: 'regular').order(created_at: :desc)
+
+        @pagy, @users = pagy(User.where(role: 'regular').order(created_at: :desc)) # Gema pagy
     end
 
     def new

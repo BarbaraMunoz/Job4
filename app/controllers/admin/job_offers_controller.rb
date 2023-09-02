@@ -4,6 +4,8 @@ class Admin::JobOffersController < ApplicationController
 
     def index
         @job_offers = JobOffer.all
+
+        @pagy, @job_offers = pagy(JobOffer.all) # Gema pagy
     end
 
     def new

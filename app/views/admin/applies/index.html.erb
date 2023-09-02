@@ -1,5 +1,5 @@
 <h1 class="admin-heading my-5">Postulaciones</h1>
-
+<%== pagy_bootstrap_nav(@pagy) %> <!--gema pagy-->
 <div class="postulations-list">
     <% @job_offers_with_applies.each do |job_offer| %>
         <div class="postulation-card">
