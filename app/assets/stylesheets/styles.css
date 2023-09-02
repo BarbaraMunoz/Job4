@@ -1,56 +1,127 @@
 body {
-    margin-top: 30px;
     padding-top: 10px;
     background: #f9f9fb;
 }
 
-/* Estilos Dashboard ADMIN */
+/*  Navbar */
+/* Estilos generales de la navbar */
+.navbar {
+    background: linear-gradient(to right, #5333ed, #2cd4d9); /* Degradado de azul-púrpura */
+    color: #FFFFFF; /* Color del texto en blanco */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin-bottom: 40px;
+}
+
+/* Estilo del botón del toggler en pantallas pequeñas */
+.navbar-toggler-icon {
+    background-color: #FFFFFF; /* Color del icono del botón de navegación */
+}
+
+/* Estilos de los enlaces en la navbar */
+.navbar-nav .nav-link {
+    color: #FFFFFF; /* Color del texto en blanco */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo del nombre del sitio (navbar-brand) */
+.navbar-brand {
+    color: #FFFFFF; /* Color del texto en blanco */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 24px; /* Tamaño del texto del nombre del sitio */
+}
+
+/* Estilo del icono de notificación */
+#notification-icon {
+    color: #FFFFFF; /* Color del icono de notificación */
+    font-size: 28px; /* Tamaño del icono de notificación */
+    transition: color 0.3s; /* Transición suave al cambiar el color */
+}
+
+/* Cambio de color al pasar el cursor por encima del icono de notificación */
+#notification-icon:hover {
+    color: #2cd4d9; /* Cambio de color al hacer hover */
+}
+
+/* Estilo del saludo y el botón de Cerrar Sesión */
+.navbar-nav.ms-auto .nav-link {
+    font-weight: bold; /* Texto en negrita */
+}
+
+.btn-link.nav-link {
+    color: #FFFFFF; /* Color del botón de Cerrar Sesión */
+
+}
+
+/* Cambio de color de texto al pasar el cursor por encima de los enlaces */
+.navbar-nav .nav-link:hover {
+    color: #2cd4d9; /* Turquesa - Color del texto al pasar el cursor */
+}
+
+/* Cambio de color de texto al pasar el cursor por encima del botón de Cerrar Sesión */
+.btn-link.nav-link:hover {
+    color: #0a0a0a; /* Turquesa - Color del botón al pasar el cursor */
+}
+
+
+/* ADMIN */
+/* Dashboard ADMIN */
+/* Estilo del contenedor del panel de administrador */
 .admin-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
+.center-content {
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin-top: 20px; /* Añade espacio en la parte superior si es necesario */
+}
+
+/* Estilo del encabezado del panel de administrador */
 .admin-header {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
+/* Estilo de los botones de administrador */
 .admin-btn {
     display: inline-block;
     margin-top: 10px;
     padding: 5px 16px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
+    background: linear-gradient(to right, #5333ed, #2cd4d9); /* Degradado de azul-púrpura */
+    color: #FFFFFF; /* Color del texto en blanco */
+    font-weight: bold; /* Texto en negrita */
+    text-decoration: none; /* Eliminar subrayado */
+    border-radius: 4px; /* Borde redondeado */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s, color 0.3s; /* Transiciones suaves al pasar el cursor */
 }
 
+/* Cambio de color de fondo y texto al pasar el cursor por encima de los botones */
 .admin-btn:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #2cd4d9, #5333ed); /* Cambio de degradado al hacer hover */
+    color: #FFFFFF; /* Cambio de color del texto al hacer hover */
 }
 
+
+/* ADMIN/USER/INDEX */
 .users-list {
     border-top: 1px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
 }
 
-/* Estilos para las tarjetas de usuario en Admin */
 .admin-card {
     display: flex;
     background-color: #f7f7f7;
     border: 1px solid #ccc;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .user-details {
     flex: 1;
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 .user-avatar {
@@ -64,7 +135,6 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;
 }
 
 .user-name {
@@ -74,20 +144,26 @@ body {
 .user-actions {
     margin-top: 80px;
 }
-
-/* Estilos para los botones de acción */
-.user-action-btn {
-    margin-right: 10px;
-    padding: 4px 8px;
-    font-size: 14px;
-}
-
+/* Estilo minimalista del botón "Ver Detalle" */
 .view-btn {
-    background-color: #28a745;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2cd4d9; /* Color de fondo turquesa */
+    color: #FFFFFF; /* Color del texto en blanco */
+    text-decoration: none; /* Eliminar subrayado */
+    border: none; /* Eliminar borde */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves al pasar el cursor */
+}
+
+/* Cambio de color de fondo y texto al pasar el cursor por encima del botón "Ver Detalle" */
+.view-btn:hover {
+    background-color: #5333ed; /* Cambio de color de fondo al hacer hover */
 }
 
 
-/*Vista Admin Show User*/
+/* ADMIN/USERS/SHOW */
 /* Estilos para la tarjeta de usuario en la vista show */
 .admin-card-show {
     max-width: 1000px;
@@ -103,7 +179,7 @@ body {
 .admin-card-header {
     font-size: 18px;
     font-weight: bold;
-    background-color: #007bff;
+    background: linear-gradient(to right, #5333ed, #2cd4d9); /* Degradado de azul-púrpura */
     color: #fff;
     padding: 10px 20px;
     border-top-left-radius: 5px;
@@ -138,12 +214,23 @@ body {
     padding: 20px;
 }
 
-.admin-btn.delete-btn {
-    background-color: #dc3545;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    padding: 4px 8px;
-    font-size: 14px;
+/* Estilo del botón de eliminación ("delete-btn") */
+.delete-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #ff0000; /* Color de fondo rojo */
+    color: #FFFFFF; /* Color del texto en blanco */
+    text-decoration: none; /* Eliminar subrayado */
+    border: none; /* Eliminar borde */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves al pasar el cursor */
+}
+
+/* Cambio de color de fondo y texto al pasar el cursor por encima del botón de eliminación */
+.delete-btn:hover {
+    background-color: #cc0000; /* Cambio de color de fondo al hacer hover (tono más oscuro de rojo) */
 }
 
 
@@ -192,6 +279,412 @@ body {
 .default-password {
     padding-right: 30px;
 }
+
+
+/* ADMIN/JOB_OFFERS/INDEX */
+/* Estilo para el encabezado */
+.admin-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+
+/* Estilo para el botón "Crear nueva Oferta" */
+.admin-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 16px;
+    background: linear-gradient(to right, #3393ed, #2cd4d9);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-align: center; /* Centrar el texto horizontalmente */
+    margin: 0 auto; /* Centrar el botón horizontalmente en su contenedor */
+}
+
+/* Estilo para la tabla */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+/* Estilo para las celdas de encabezado */
+.admin-table th {
+    background-color: #0b0c0c89;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Estilo para las celdas de datos */
+.admin-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Estilo para las filas de la tabla al pasar el cursor sobre ellas */
+.admin-table tbody tr:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al hacer hover */
+    color: #3c9194;
+}
+
+/* Estilo para los botones de acción (Show y Edit) */
+.admin-action-btn {
+    background-color: #2cd4d9;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cambio de color al hacer hover en los botones de acción */
+.admin-action-btn:hover {
+    background-color: #5333ed;
+}
+
+/* ADMIN/JOBOFFERS/SHOW */
+/* Estilo para la card de la oferta laboral */
+.job-offer-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Estilo para el título de la oferta laboral */
+.job-offer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la información de la oferta laboral (descripción y requerimientos) */
+.job-offer-info {
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de los botones de acción (Editar y Eliminar) */
+.job-offer-actions {
+    display: flex; /* Mostrar los botones en línea */
+    justify-content: flex-start; /* Alinear los botones a la izquierda */
+    align-items: center; /* Centrar verticalmente los botones */
+    margin-top: 100px;
+}
+
+/* Estilo para el botón "Editar" */
+.edit-btn {
+    background-color: #2cd4d9; /* Color de fondo azul */
+    color: #ffffff; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    padding: 5px 10px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    margin-right: 20px;
+}
+
+/* Cambio de color al pasar el cursor por encima del botón "Editar" */
+.edit-btn:hover {
+    background-color: #00b3a7; /* Color de fondo azul más oscuro */
+}
+
+/* Estilo para el botón "Eliminar" */
+.delete-btn2 {
+    background-color: #ff0000; /* Color de fondo rojo */
+    color: #ffffff; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    padding: 5px 10px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Cambio de color al pasar el cursor por encima del botón "Eliminar" */
+.delete-btn2:hover {
+    background-color: #cc0000; /* Color de fondo rojo más oscuro */
+}
+
+/* admin/job_offers/edit */
+/* Estilo para el contenedor de la vista de edición de oferta laboral */
+.edit-job-offer-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título de la vista de edición */
+.edit-job-offer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los campos de entrada del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo para las etiquetas de los campos de entrada */
+.form-group label {
+    font-weight: bold;
+}
+
+/* Estilo para los campos de entrada de texto */
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de "Actualizar" */
+.edit-job-offer-submit {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Cambio de color al pasar el cursor por encima del botón de "Actualizar" */
+.edit-job-offer-submit:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro */
+}
+
+/* Estilo para el botón de "Volver" */
+.edit-job-offer-back-btn {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Cambio de color al pasar el cursor por encima del botón de "Volver" */
+.edit-job-offer-back-btn:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro */
+}
+
+/* Estilo para el contenedor del botón "Volver" */
+.edit-job-offer-back {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ADMIN/APPLIES/INDEX */
+/* Estilo para el título de la postulación */
+.postulation-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el contenedor de la lista de postulaciones */
+  .postulations-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las tarjetas de postulaciones */
+  }
+  
+  /* Estilo para la tarjeta de postulación */
+  .postulation-card {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Ancho de cada tarjeta (ajustar según sea necesario) */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para el encabezado de la tarjeta */
+  .postulation-card-header {
+    text-align: center; /* Centrar el título */
+  }
+  
+  /* Estilo para el cuerpo de la tarjeta */
+  .postulation-card-body {
+    text-align: center; /* Centrar el contador de postulaciones */
+    margin-top: 20px;
+  }
+  
+  /* Estilo para el pie de página de la tarjeta */
+  .postulation-card-footer {
+    text-align: center; /* Centrar el botón "Ver Detalle" */
+    margin-top: 20px;
+  }
+  
+  /* Estilo para el botón "Ver Detalle" */
+  .view-details-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2cd4d9; /* Color de fondo turquesa */
+    color: #FFFFFF; /* Color del texto en blanco */
+    text-decoration: none; /* Eliminar subrayado */
+    border: none; /* Eliminar borde */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves al pasar el cursor */
+  }
+  
+  /* Cambio de color de fondo y texto al pasar el cursor por encima del botón "Ver Detalle" */
+  .view-details-btn:hover {
+    background-color: #5333ed; /* Cambio de color de fondo al hacer hover */
+  }
+  
+
+/* ADMIN/APPLIES/SHOW */
+/* Estilo para el contenedor principal */
+.postulation-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título "Detalles de la Postulación" */
+.postulation-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para los detalles de la oferta */
+.offer-details {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Estilo para la lista de empleados que han postulado */
+.applicants-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo para cada elemento de la lista de aplicantes */
+.applicant-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+/* Cambio de color de fondo al hacer hover */
+.applicant-item:hover {
+    background-color: #139ba047; /* Cambio de color al hacer hover */
+    color: #fff; /* Cambio de color del texto al hacer hover */
+}
+
+/* Estilo para los enlaces a los perfiles de los aplicantes */
+.applicant-item a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilo para el botón de volver */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2cd4d9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #00b3a7; /* Color de fondo azul más oscuro */
+}
+
+/* ADMIN/NOTIFICATION/INDEX */
+/* Estilo para el título "Lista de Notificaciones" */
+.notifications-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para la lista de notificaciones */
+.notifications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo para cada elemento de notificación */
+.notification-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+/* Cambio de color de fondo al hacer hover */
+.notification-item:hover {
+    background-color: #2cd4d9; /* Cambio de color al hacer hover */
+    color: #fff; /* Cambio de color del texto al hacer hover */
+}
+
+/* Estilo para el enlace de notificación */
+.notification-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilo para la fecha de notificación */
+.notification-date {
+    margin-left: 10px;
+    color: #555;
+}
+
+/* admin/notification/show/detail */
+.notification-card {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
 
 
 

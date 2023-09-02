@@ -29,7 +29,7 @@ class Admin::UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
-        redirect_to admin_dashboard_path, notice: 'Usuario eliminado con éxito.'
+        redirect_to admin_users_path, notice: 'Usuario eliminado con éxito.'
     end
 
     private

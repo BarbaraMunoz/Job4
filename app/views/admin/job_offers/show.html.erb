@@ -1,10 +1,25 @@
-<h1><%= @job_offer.title %></h1>
+<div class="job-offer-card">
+    <h1 class="job-offer-title"><%= @job_offer.title %></h1>
+    <hr>
 
-<p><strong>Descripción:</strong></p>
-<p><%= @job_offer.description %></p>
+    <div class="job-offer-info">
+        <p><strong>Descripción:</strong></p>
+        <p class="job-offer-description"><%= @job_offer.description %></p>
 
-<p><strong>Requerimientos:</strong></p>
-<p><%= @job_offer.requirements %></p>
+        <p><strong>Requerimientos:</strong></p>
+        <p class="job-offer-requirements"><%= @job_offer.requirements %></p>
+    </div>
 
-<%= link_to 'Editar', edit_admin_job_offer_path(@job_offer) %> |  <%= button_to 'Eliminar', admin_job_offer_path(@job_offer), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>
+
+    <div class="job-offer-actions">
+        <%= link_to 'Editar', edit_admin_job_offer_path(@job_offer), class: 'edit-btn' %>
+        <%= button_to 'Eliminar', admin_job_offer_path(@job_offer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-btn2' %>
+    </div>
+</div>
+
+<div class="edit-job-offer-back">
+    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), admin_job_offers_path, class: "admin-btn edit-job-offer-back-btn" %>
+</div>
+
+
+

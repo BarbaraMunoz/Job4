@@ -1,18 +1,20 @@
-<h1>Detalles de la Postulación</h1>
-<p>Oferta Laboral: <%= @job_offer.title %></p>
-<p>Descripción de la Oferta: <%= @job_offer.description %></p>
-
-<h2>Empleados que han postulado:</h2>
-<ul>
-    <% @applicants.each do |applicant| %>
-        <li>
+<div class="postulation-container">
+    <h1 class="postulation-title">Detalles de la Postulación</h1>
+    <p class="offer-details"><strong>Oferta Laboral:</strong> <%= @job_offer.title %></p>
+    <p class="offer-details"><strong>Descripción de la Oferta:</strong> <%= @job_offer.description %></p>
+    <hr>
+    <h2 class="postulation-title my-4">Empleados que han postulado:</h2>
+    <ul class="applicants-list">
+        <% @applicants.each do |applicant| %>
+            <li class="applicant-item">
             <%= link_to applicant.full_name, admin_user_path(applicant) %>
-            
-        </li>
-    <% end %>
-</ul>
+            </li>
+        <% end %>
+    </ul>
+<%= link_to 'Volver a la lista de Postulaciones', admin_last_applies_path, class: 'back-button' %>
+</div>
 
-<%= link_to 'Volver a la lista de Postulaciones', admin_last_applies_path %>
+
 
 
 

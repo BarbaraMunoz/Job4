@@ -1,7 +1,10 @@
-<h1>Detalle de Notificación</h1>
+<div class="notification-card">
+    <h1 class="notification-title">Detalle de Notificación</h1>
 
-<p><strong>Contenido:</strong> <%= @notification.content %></p>
-<p><strong>Leído:</strong> <%= @notification.read ? 'Sí' : 'No' %></p>
+    <p><strong>Contenido:</strong> <%= @notification.content %></p>
+    <p><strong>Leído:</strong> <%= @notification.read ? 'Sí' : 'No' %></p>
 
-<%= link_to "Volver a la Lista", admin_notifications_path %>
+    <%= link_to "Volver a la Lista", admin_notifications_path, class: "back-button" %>
+</div>
+
 

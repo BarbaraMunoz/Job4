@@ -1,53 +1,58 @@
 <% if user_signed_in? %>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">PortalJob4</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg py-3">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <% if current_user.admin? %>
-            <li class="nav-item">
-                <%= link_to "Inicio", admin_dashboard_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Ofertas Laborales", admin_job_offers_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Postulaciones", admin_last_applies_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Usuarios", admin_users_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<%= admin_notifications_path %>">
-                    <i id="notification-icon" class="far fa-bell d-none d-md-block" style="font-size: 22px; color: #CBE4F2;">
-                    </i>
-                </a>
-            </li>
-            <% else %>
-            <li class="nav-item">
-                <%= link_to "Inicio", regular_users_dashboard_index_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Perfil", regular_users_user_path(current_user), class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Ofertas Laborales", regular_users_job_offers_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Mis Postulaciones", regular_users_applies_path, class: "nav-link" %>
-            </li>
-            <% end %>
-            <li class="nav-item">
-            <span class="nav-link">Hola, <%= current_user.first_name %></span>
-            </li>
-            <li class="nav-item">
-            <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-link" %>
-            </li>
-        </ul>
+            <ul class="navbar-nav me-auto ps-5 pt-2">
+                <% if current_user.admin? %>
+                <li class="nav-item">
+                    <%= link_to "Inicio", admin_dashboard_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Ofertas Laborales", admin_job_offers_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Postulaciones", admin_last_applies_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Usuarios", admin_users_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= admin_notifications_path %>">
+                        <i id="notification-icon" class="far fa-envelope"></i>
+                    </a>
+                </li>
+                <% else %>
+                <li class="nav-item">
+                    <%= link_to "Inicio", regular_users_dashboard_index_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Perfil", regular_users_user_path(current_user), class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Ofertas Laborales", regular_users_job_offers_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Mis Postulaciones", regular_users_applies_path, class: "nav-link" %>
+                </li>
+                <% end %>
+            </ul>
+            <ul class="navbar-nav ms-auto pe-4">
+                <li class="nav-item">
+                    <span class="nav-link">Hola, <%= current_user.first_name %></span>
+                </li>
+                <li class="nav-item">
+                    <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "btn btn-link nav-link" %>
+                </li>
+            </ul>
         </div>
     </nav>
 <% end %>
+
+
+
+
+
 
 

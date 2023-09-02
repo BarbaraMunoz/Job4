@@ -1,6 +1,6 @@
 <div class="admin-card-show">
     <div class="admin-card-header">
-        Detalle del Usuario
+        Detalle del Empleado
     </div>
     <div class="admin-card-body">
         <div class="user-details">
@@ -22,9 +22,10 @@
         <p><%= @user.bio %></p>
     </div>
     <div class="user-actions">
-        <%= button_to "Eliminar Usuario", admin_user_path(@user), method: :delete, data: { confirm: "¿Estás seguro de que deseas eliminar este usuario?" }, class: "admin-btn delete-btn" %>
+        <%= button_to "Eliminar Usuario", admin_user_path(@user), method: :delete, data: { confirm: "¿Estás seguro de que deseas eliminar este usuario?" }, class: "delete-btn2 ms-2 my-4" %>
     </div>
-    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>
 </div>
 
-
+<div class="edit-job-offer-back">
+    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn edit-job-offer-back-btn" %>
+</div>

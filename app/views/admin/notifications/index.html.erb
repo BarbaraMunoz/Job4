@@ -1,11 +1,12 @@
-<h1>Lista de Notificaciones</h1>
+<h1 class="notifications-title">Lista de Notificaciones</h1>
 
-<ul>
+<ul class="notifications-list">
     <% @notifications.each do |notification| %>
-        <li>
-        <%= link_to notification.content, admin_notification_path(notification) %>
-        (<%= notification.created_at.strftime('%d/%m/%Y %H:%M') %>)
+        <li class="notification-item">
+            <%= link_to notification.content, admin_notification_path(notification), class: "notification-link" %>
+            <span class="notification-date"><%= notification.created_at.strftime('%d/%m/%Y %H:%M') %></span>
         </li>
     <% end %>
 </ul>
+
 

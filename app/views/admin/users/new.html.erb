@@ -63,7 +63,7 @@
     <%= f.submit "Crear Usuario", class: "btn btn-primary mb-2" %>
   <% end %>
 
-  <%= link_to "Volver al Panel", admin_dashboard_path, class: "btn btn-secondary" %>
+  <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>
 </div>
 
 

@@ -1,14 +1,14 @@
-<h1>Ofertas Laborales</h1>
+<h1 class="admin-heading">Ofertas Laborales</h1>
 
 <%= link_to 'Crear nueva Oferta', new_admin_job_offer_path, class: 'admin-btn' %>
 
-<table>
+<table class="admin-table">
     <thead>
         <tr>
-        <th>Fecha publicación</th>
-        <th>Título</th>
-        <th>Descripción</th>
-        <th>Acciones</th>
+            <th>Fecha publicación</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -18,12 +18,13 @@
             <td><%= job_offer.title %></td>
             <td><%= job_offer.requirements %></td>
             <td>
-            <%= link_to 'Show', admin_job_offer_path(job_offer) %>
-            <%= link_to 'Edit', edit_admin_job_offer_path(job_offer) %>
+                <%= link_to 'Ver', admin_job_offer_path(job_offer), class: 'admin-action-btn' %>
+                <%= link_to 'Editar', edit_admin_job_offer_path(job_offer), class: 'admin-action-btn' %>
             </td>
         </tr>
         <% end %>
     </tbody>
 </table>
+
 
 

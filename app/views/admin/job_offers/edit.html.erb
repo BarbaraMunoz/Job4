@@ -1,26 +1,28 @@
-<h1>Editar Oferta Laboral</h1>
-<%= form_with(model: @job_offer, url: admin_job_offer_path(@job_offer), method: :patch) do |f| %>
-    <div>
-        <%= f.label :title, "Título" %>
-        <%= f.text_field :title, class: "form-control" %>
-    </div>
+<div class="edit-job-offer-container">
+    <h1 class="edit-job-offer-title">Editar Oferta Laboral</h1>
+    <%= form_with(model: @job_offer, url: admin_job_offer_path(@job_offer), method: :patch) do |f| %>
+        <div class="form-group">
+            <%= f.label :title, "Título" %>
+            <%= f.text_field :title, class: "form-control" %>
+        </div>
 
-    <div>
-        <%= f.label :description, "Descripción" %>
-        <%= f.text_area :description, class: "form-control" %>
-    </div>
+        <div class="form-group">
+            <%= f.label :description, "Descripción" %>
+            <%= f.text_area :description, class: "form-control" %>
+        </div>
 
-    <div>
-        <%= f.label :requirements, "Requerimientos" %>
-        <%= f.text_area :requirements, class: "form-control" %>
-    </div>
+        <div class="form-group">
+            <%= f.label :requirements, "Requerimientos" %>
+            <%= f.text_area :requirements, class: "form-control" %>
+        </div>
 
-    <div>
-        <%= f.submit 'Actualizar', class: "btn btn-primary mt-2" %>
-    </div>
-    <div>
-        <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn" %>
-    </div>
-<% end %>
+        <div class="form-group">
+            <%= f.submit 'Actualizar', class: "btn btn-primary mt-2 edit-job-offer-submit" %>
+        </div>
+    <% end %>
+</div>
 
+<div class="edit-job-offer-back">
+    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), :back, class: "admin-btn edit-job-offer-back-btn" %>
+</div>
 
