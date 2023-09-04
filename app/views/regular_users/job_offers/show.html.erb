@@ -1,7 +1,7 @@
 <div class="job-offer-show-container">
     <h1 class="job-offer-title"><%= @job_offer.title %></h1>
-    <p class="job-offer-description"><%= @job_offer.description %></p>
-    <p class="job-offer-requirements"><%= @job_offer.requirements %></p>
+    <p class="job-offer-description"><strong>Descripción:</strong> <%= @job_offer.description %></p>
+    <p class="job-offer-requirements"><strong>Requerimientos:</strong><%= @job_offer.requirements %></p>
     <hr>
 
     <% if @job_offer.applied_by?(current_user) %>
