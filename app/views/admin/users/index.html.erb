@@ -2,26 +2,39 @@
     <h1 class="admin-header">Empleados Registrados</h1>
 
     <%= link_to "Crear Nuevo Usuario", new_admin_user_path, class: "admin-btn" %>
-    <%== pagy_bootstrap_nav(@pagy) %> <!--gema pagy-->
+
+    <!-- Formulario de Búsqueda -->
+    <%= form_with(url: admin_users_path, method: "get", class: "search-form") do |f| %>
+    <div class="input-group rounded my-3">
+        <%= f.text_field :query, class: "form-control rounded-start", placeholder: "Ejemplo: Juan Pérez" %>
+        <button type="submit" class="btn btn-primary rounded-end">
+        <i class="fas fa-search"></i> <!-- Icono de lupa -->
+        </button>
+    </div>
+    <% end %>
+    <!--Fin Formulario de Búsqueda -->
+
+    <%== pagy_bootstrap_nav(@pagy) %> <!-- Gema pagy -->
+
     <div class="users-list">
         <% @users.each do |user| %>
-            <div class="admin-card">
-                <div class="user-avatar">
-                    <% if user.avatar.attached? %>
-                        <%= image_tag user.avatar, class: "user-avatar-img" %>
-                    <% else %>
-                        <%= image_tag 'default_avatar.jpg', class: "user-avatar-img" %>
-                    <% end %>
-                </div>
-                <div class="user-details">
-                    <p><strong>Fecha de Creación:</strong> <%= user.created_at.strftime('%d/%m/%Y %H:%M:%S') %></p>
-                    <p class="user-name"><strong>Nombre:</strong> <%= user.first_name %> <%= user.last_name %></p>
-                    <p><strong>Correo Electrónico:</strong> <%= user.email %></p>
-                </div>
-                <div class="user-actions">
-                    <%= link_to "Ver Detalle", admin_user_path(user), class: "view-btn" %>
-                </div>
+        <div class="admin-card">
+            <div class="user-avatar">
+            <% if user.avatar.attached? %>
+                <%= image_tag user.avatar, class: "user-avatar-img" %>
+            <% else %>
+                <%= image_tag 'default_avatar.jpg', class: "user-avatar-img" %>
+            <% end %>
             </div>
+            <div class="user-details">
+            <p><strong>Fecha de Creación:</strong> <%= user.created_at.strftime('%d/%m/%Y %H:%M:%S') %></p>
+            <p class="user-name"><strong>Nombre:</strong> <%= user.first_name %> <%= user.last_name %></p>
+            <p><strong>Correo Electrónico:</strong> <%= user.email %></p>
+            </div>
+            <div class="user-actions">
+            <%= link_to "Ver Detalle", admin_user_path(user), class: "view-btn" %>
+            </div>
+        </div>
         <% end %>
     </div>
 </div>

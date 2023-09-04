@@ -21,7 +21,9 @@
 <% end %>
 
 
-<%= link_to 'Volver a la lista de Ofertas', admin_job_offers_path %>
+<div class="edit-job-offer-back">
+    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver'), admin_job_offers_path, class: "admin-btn edit-job-offer-back-btn" %>
+</div>
 
 
 

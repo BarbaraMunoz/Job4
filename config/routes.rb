@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
     resources :users, only: [:show]
     resources :job_offers, only: [:index, :show] do
-      resources :applies, only: [:index, :create]
+      resources :applies, only: [:index, :show, :create]
     end
     get 'applies', to: 'applies#index', as: :applies
   end

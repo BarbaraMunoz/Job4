@@ -3,9 +3,11 @@
 one:
   title: MyString
   description: MyText
-  user: one
+  requirements: MyText
+  user: admin
 
 two:
   title: MyString
   description: MyText
-  user: two
+  requirements: MyText
+  user: admin

@@ -1,18 +1,22 @@
-<h1><%= @job_offer.title %></h1>
-<p><%= @job_offer.description %></p>
-<p><%= @job_offer.requirements %></p>
+<div class="job-offer-show-container">
+    <h1 class="job-offer-title"><%= @job_offer.title %></h1>
+    <p class="job-offer-description"><%= @job_offer.description %></p>
+    <p class="job-offer-requirements"><%= @job_offer.requirements %></p>
+    <hr>
 
-<% if @job_offer.applied_by?(current_user) %>
-    <p>Ya has aplicado a esta oferta el día <%= @job_offer.applied_date(current_user) %></p>
-<% else %>
-    <h2>Realizar Postulación</h2>
-    <%= form_with(model: @apply, url: regular_users_job_offer_applies_path(@job_offer), method: :post) do |f| %>
-        <%= f.hidden_field :job_offer_id %>
-        <%= f.submit 'Postular', class: 'btn btn-primary' %>
+    <% if @job_offer.applied_by?(current_user) %>
+        <p class="job-offer-applied">Aplicaste a esta oferta el día <%= @job_offer.applied_date(current_user) %></p>
+    <% else %>
+        <h2 class="job-offer-apply-title">Realizar Postulación</h2>
+        <%= form_with(model: @apply, url: regular_users_job_offer_applies_path(@job_offer), method: :post, class: 'apply-form') do |f| %>
+            <%= f.hidden_field :job_offer_id %>
+            <%= f.submit 'Postular', class: 'btn btn-primary apply-button' %>
+        <% end %>
     <% end %>
-<% end %>
-
-<%= link_to 'Volver a la lista', regular_users_job_offers_path %>
+</div>
+<div class="edit-job-offer-back">
+    <%= link_to raw('<i class="fas fa-arrow-left"></i> Volver a las ofertas'), regular_users_job_offers_path, class: "admin-btn edit-job-offer-back-btn" %>
+</div>
 
 
 

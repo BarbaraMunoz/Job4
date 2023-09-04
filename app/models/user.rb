@@ -15,6 +15,10 @@ class User < ApplicationRecord
         validates :first_name, :last_name, :position, :department, :bio, presence: true
         validates :email, uniqueness: true
         
+        include PgSearch::Model
+
+        pg_search_scope :search_by_name, against: [:first_name, :last_name]
+
         def default_avatar_url
           ActionController::Base.helpers.asset_path("default_avatar.jpg")
         end

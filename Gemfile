@@ -85,4 +85,6 @@ gem "figaro", "~> 1.2"
 
 gem 'pagy'
 
+gem 'pg_search'
 
+gem "aws-sdk-s3", "~> 1.134"

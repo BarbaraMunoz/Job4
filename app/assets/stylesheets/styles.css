@@ -3,6 +3,85 @@ body {
     background: #f9f9fb;
 }
 
+/* HOME */
+.home-bg {
+    background-image: url('/assets/home.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Escalar la imagen para que cubra todo el contenedor */
+    background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    background-attachment: fixed; /* Fijar la imagen de fondo */
+    height: 100vh; /* Asegurar que el contenedor cubra toda la altura de la ventana */
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+    justify-content: flex-start; /* Centrar el contenido arriba */
+    align-items: center; /* Centrar horizontalmente */
+}
+
+/* Estilo para el enlace "Ingresar" */
+.enter-link {
+    margin-top: 80px; /* Espacio superior para separar del borde superior */
+    padding: 10px 20px; /* Espaciado interno para el enlace */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    font-size: 18px; /* Tamaño de fuente */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s; /* Transición de color de fondo al pasar el mouse */
+}
+
+.enter-link:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo al pasar el mouse */
+}
+
+/* Form Ingresar */
+/* Estilo para el formulario de inicio de sesión */
+.login-form {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Estilo para las etiquetas de formulario */
+.form-label {
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo para los campos de formulario */
+.form-control {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border: 1px solid #ccc; /* Borde con color de borde */
+    border-radius: 5px; /* Borde redondeado */
+    transition: border-color 0.3s; /* Transición de color de borde */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Cambiar color del borde al enfocar */
+    outline: none; /* Eliminar contorno en el enfoque */
+}
+
+/* Estilo para el botón de inicio de sesión */
+.btn-primary {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición de color de fondo */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cambiar color de fondo al pasar el mouse */
+}
+
+
+
+
+
 /*  Navbar */
 /* Estilos generales de la navbar */
 .navbar {
@@ -103,6 +182,40 @@ body {
     color: #FFFFFF; /* Cambio de color del texto al hacer hover */
 }
 
+/* Barra de búsqueda */
+/* Estilo para el formulario de búsqueda */
+.search-form {
+    margin-bottom: 20px; /* Espacio inferior para separarlo de otros elementos */
+  }
+  
+  /* Estilo para el campo de entrada de búsqueda */
+  .search-input {
+    border-radius: 0; /* Bordes cuadrados en el campo de entrada */
+  }
+  
+  /* Estilo para el botón de búsqueda */
+  .search-button {
+    border-radius: 0; /* Bordes cuadrados en el botón */
+  }
+  
+  /* Estilo para el contenedor que agrupa el campo y el botón */
+  .input-group.rounded {
+    border-radius: 25px; /* Borde curvo para el contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
+  }
+  
+  /* Estilo para el borde curvo del campo de entrada */
+  .rounded-start {
+    border-top-left-radius: 25px; /* Borde curvo en la esquina superior izquierda */
+    border-bottom-left-radius: 25px; /* Borde curvo en la esquina inferior izquierda */
+  }
+  
+  /* Estilo para el borde curvo del botón de búsqueda */
+  .rounded-end {
+    border-top-right-radius: 25px; /* Borde curvo en la esquina superior derecha */
+    border-bottom-right-radius: 25px; /* Borde curvo en la esquina inferior derecha */
+  }
+  
 
 /* ADMIN/USER/INDEX */
 .users-list {
@@ -500,17 +613,17 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
+}
+
   /* Estilo para el contenedor de la lista de postulaciones */
-  .postulations-list {
+.postulations-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Espacio entre las tarjetas de postulaciones */
-  }
-  
+}
+
   /* Estilo para la tarjeta de postulación */
-  .postulation-card {
+.postulation-card {
     background-color: #f7f7f7;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -518,27 +631,27 @@ body {
     width: calc(33.33% - 20px); /* Ancho de cada tarjeta (ajustar según sea necesario) */
     padding: 20px;
     box-sizing: border-box;
-  }
-  
+}
+
   /* Estilo para el encabezado de la tarjeta */
-  .postulation-card-header {
+.postulation-card-header {
     text-align: center; /* Centrar el título */
-  }
-  
+}
+
   /* Estilo para el cuerpo de la tarjeta */
-  .postulation-card-body {
+.postulation-card-body {
     text-align: center; /* Centrar el contador de postulaciones */
     margin-top: 20px;
-  }
-  
+}
+
   /* Estilo para el pie de página de la tarjeta */
-  .postulation-card-footer {
+.postulation-card-footer {
     text-align: center; /* Centrar el botón "Ver Detalle" */
     margin-top: 20px;
-  }
-  
+}
+
   /* Estilo para el botón "Ver Detalle" */
-  .view-details-btn {
+.view-details-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #2cd4d9; /* Color de fondo turquesa */
@@ -548,13 +661,13 @@ body {
     border-radius: 4px; /* Borde redondeado */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s; /* Transiciones suaves al pasar el cursor */
-  }
-  
+}
+
   /* Cambio de color de fondo y texto al pasar el cursor por encima del botón "Ver Detalle" */
-  .view-details-btn:hover {
+.view-details-btn:hover {
     background-color: #5333ed; /* Cambio de color de fondo al hacer hover */
-  }
-  
+}
+
 
 /* ADMIN/APPLIES/SHOW */
 /* Estilo para el contenedor principal */
@@ -685,10 +798,29 @@ body {
     max-width: 800px;
 }
 
+/* VISTAS REGULAR_USER */
+/* Dashboard */
+/* Estilo para el contenedor del texto de bienvenida */
+.welcome-text {
+    text-align: center; /* Centrar el contenido horizontalmente */
+    padding: 80px 0; /* Espacio alrededor del contenido */
+}
 
+/* Estilo para el título principal */
+.welcome-text h1 {
+    font-size: 36px; /* Tamaño del título */
+    color: #333; /* Color del texto del título */
+    margin-bottom: 20px; /* Espacio inferior para separarlo del párrafo siguiente */
+}
 
+/* Estilo para el párrafo de descripción */
+.welcome-text p {
+    font-size: 18px; /* Tamaño del texto del párrafo */
+    color: #666; /* Color del texto del párrafo */
+    margin-bottom: 40px; /* Espacio inferior para separarlo del enlace de inicio de sesión */
+}
 
-/* Views/Regular_Users */
+/* VIES/REGULAR_USERS */
 
 /* Perfil User _Profile */
 .profile-card {
@@ -758,38 +890,196 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  
-  
-  .form-row {
+.form-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     flex: 1;
     margin-right: 10px;
-  }
-  
-  .form-group:last-child {
+}
+
+.form-group:last-child {
     margin-right: 0;
-  }
-  
-  .form-label {
+}
+
+.form-label {
     font-weight: bold;
-  }
-  
-  .form-control {
+}
+
+.form-control {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .form-submit {
+}
+
+.form-submit {
     text-align: left;
     margin-top: 15px;
-  }
-  
+}
+
+/* regular_user/job_offers/index */
+/* Estilo para el contenedor de usuarios regulares */
+.regular-user-container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    padding: 20px; /* Espaciado interno del contenedor */
+}
+
+/* Estilo para la lista de ofertas laborales para usuarios regulares */
+.regular-user-job-offers {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo para cada elemento de oferta laboral para usuarios regulares */
+.regular-user-job-offer-item {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Alinear elementos a la izquierda y derecha */
+    align-items: center; /* Centrar verticalmente los elementos */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+/* Estilo para el título de la oferta laboral para usuarios regulares */
+.regular-user-job-offer-title {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Estilo para el botón "Ver detalle" para usuarios regulares */
+.regular-user-job-offer-button {
+    font-size: 16px;
+    color: #fff;
+    background-color: #2cd4d9;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo de hover para el título y el botón para usuarios regulares */
+.regular-user-job-offer-title:hover,
+.regular-user-job-offer-button:hover {
+    color: #ffffff; /* Cambio de color al hacer hover */
+    background-color: #1a8a8e; /* Cambio de color al hacer hover */
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.02); /* Efecto de escala al hacer hover */
+}
+
+/* regular_users/job_offers/show */
+/* Estilo para el contenedor de la vista "show" de la oferta laboral */
+.job-offer-show-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título de la oferta laboral */
+.job-offer-title {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo para la descripción de la oferta laboral */
+.job-offer-description {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Estilo para los requisitos de la oferta laboral */
+.job-offer-requirements {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Estilo para el mensaje de aplicación exitosa */
+.job-offer-applied {
+    font-size: 16px;
+    color: #4caf50; /* Verde */
+}
+
+/* Estilo para el título de aplicación */
+.job-offer-apply-title {
+    font-size: 20px;
+    color: #333;
+}
+
+/* Estilo para el formulario de aplicación */
+.apply-form {
+    margin-top: 20px;
+}
+
+/* Estilo para el botón de aplicación */
+.apply-button {
+    font-size: 18px;
+    color: #fff;
+    background-color: #2cd4d9; /* Azul claro */
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* Estilo para el enlace de volver a la lista */
+.back-link {
+    font-size: 16px;
+    color: #2cd4d9; /* Azul claro */
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/* Estilo de hover para el botón de aplicación */
+.apply-button:hover {
+    background-color: #1a8a8e; /* Cambio de color al hacer hover */
+}
+
+/* regular_user/applies/index */
+/* Estilos para el contenedor principal */
+.job-offer-show-container {
+    text-align: center;
+}
+
+/* Estilos para el título */
+.job-offer-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Cambia el color del título si es necesario */
+}
+
+/* Estilos para la lista de ofertas laborales */
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para los elementos de la lista */
+.custom-list-item {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc; /* Borde alrededor de los elementos de la lista */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.custom-list-item:hover {
+    background-color: #2cd4d9; /* Color de fondo al hacer hover (azul claro) */
+}
+
+.custom-link {
+    color: #0b0b0b; /* Color de texto normal */
+    text-decoration: none; /* Quita el subrayado */
+    position: relative; /* Establece la posición relativa para el elemento enlace */
+}

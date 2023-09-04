@@ -1,11 +1,19 @@
-<h1>Ofertas Laborales</h1>
+<div class="regular-user-container">
+    <h1 class="regular-user-title">Ofertas Laborales</h1>
 
-<ul class="list-group">
-    <% @job_offers.each do |job_offer| %>
-        <li class="list-group-item">
-            <%= link_to job_offer.title, regular_users_job_offer_path(job_offer) %>
-            <%= link_to 'Ver detalle', regular_users_job_offer_path(job_offer), class: 'btn btn-primary btn-sm ms-2' %>
-        </li>
-    <% end %>
-</ul>
+    <ul class="regular-user-job-offers">
+        <% @job_offers.each do |job_offer| %>
+            <li class="regular-user-job-offer-item">
+                <div class="regular-user-job-offer-info">
+                    <%= link_to job_offer.title, regular_users_job_offer_path(job_offer), class: "regular-user-job-offer-title" %>
+                </div>
+                <div class="regular-user-job-offer-actions">
+                    <%= link_to 'Ver detalle', regular_users_job_offer_path(job_offer), class: 'regular-user-job-offer-button' %>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
+
 

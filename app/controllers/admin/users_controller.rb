@@ -2,9 +2,17 @@ class Admin::UsersController < ApplicationController
     before_action :authenticate_admin!
 
     def index
-        @users = User.where(role: 'regular').order(created_at: :desc)
+        if params[:query].present?
+            search_query = "%#{params[:query]}%" # Agregar % al principio y al final para búsqueda parcial
+    
+            @users = User.where(role: 'regular')
+                        .where("first_name ILIKE ? OR last_name ILIKE ?", search_query, search_query)
+                        .order(created_at: :desc)
+        else
+            @users = User.where(role: 'regular').order(created_at: :desc)
+        end
 
-        @pagy, @users = pagy(User.where(role: 'regular').order(created_at: :desc)) # Gema pagy
+        @pagy, @users = pagy(@users) # Gema pagy
     end
 
     def new

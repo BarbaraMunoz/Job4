@@ -21,6 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<%= admin_notifications_path %>">
                         <i id="notification-icon" class="far fa-envelope"></i>
+                        <i class=""></i>
                     </a>
                 </li>
                 <% else %>
@@ -28,13 +29,13 @@
                     <%= link_to "Inicio", regular_users_dashboard_index_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                    <%= link_to "Perfil", regular_users_user_path(current_user), class: "nav-link" %>
-                </li>
-                <li class="nav-item">
                     <%= link_to "Ofertas Laborales", regular_users_job_offers_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                     <%= link_to "Mis Postulaciones", regular_users_applies_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Perfil", regular_users_user_path(current_user), class: "nav-link" %>
                 </li>
                 <% end %>
             </ul>

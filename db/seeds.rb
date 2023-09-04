@@ -7,17 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Crear un usuario administrador
-admin = User.create!(
-    first_name: 'Esteban',
-    last_name: 'Reyes',
-    position: 'Administrator',
-    department: 'Gerencia RR.HH',
-    bio: 'Administrador del portal',
-    email: 'admin@email.com',
-    password: 'admin123',
-    password_confirmation: 'admin123',
-    role: 'admin'
-)
+#admin = User.create!(
+#   first_name: 'Esteban',
+#   last_name: 'Reyes',
+#   position: 'Administrator',
+#  department: 'Gerencia RR.HH',
+#    bio: 'Administrador del portal',
+#    email: 'admin@email.com',
+#    password: 'admin123',
+#    password_confirmation: 'admin123',
+#    role: 'admin'
+#)
 
 # Crea una oferta de trabajo simulada
 job_offer = JobOffer.create(
@@ -30,10 +30,3 @@ job_offer = JobOffer.create(
 user = User.regular.first # Asegúrate de que el método "regular" devuelva los usuarios regulares
 job_offer = JobOffer.first
 
-# Crea una postulación simulada
-apply = Apply.create(
-    user: user,
-    job_offer: job_offer,
-    message: 'Estoy interesado en esta posición y creo que soy un buen candidato.',
-    status: 'pending' # Cambia esto según corresponda
-)

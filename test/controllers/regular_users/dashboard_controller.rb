@@ -1,16 +1,14 @@
 require "test_helper"
 
-class Admin::DashboardControllerTest < ActionDispatch::IntegrationTest
+class RegularUsers::DashboardControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers 
 
   def setup
-    @admin = users(:admin)
+    @regular_user = users(:regular_user)
   end
 
   test "should get index" do
-    sign_in @admin
-    get admin_dashboard_path
+    get regular_user_dashboard_path
     assert_response :success
   end
 end
-
