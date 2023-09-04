@@ -1,5 +1,7 @@
 <h1 class="notifications-title">Lista de Notificaciones</h1>
 
+<%== pagy_bootstrap_nav(@pagy) %> <!--gema pagy-->
+
 <ul class="notifications-list">
     <% @notifications.each do |notification| %>
         <li class="notification-item">

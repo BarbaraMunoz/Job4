@@ -3,6 +3,8 @@ class Admin::NotificationsController < ApplicationController
 
   def index
     @notifications = Notification.order(created_at: :desc)
+
+    @pagy, @notifications = pagy(@notifications) # Gema pagy
   end
 
   def show
